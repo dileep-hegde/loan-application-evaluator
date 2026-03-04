@@ -152,4 +152,64 @@ public class LoanApplication {
                 ", rejectionReasons=" + rejectionReasons +
                 '}';
     }
+
+    public LoanApplicationBuilder toBuilder() {
+        return new LoanApplicationBuilder()
+                .applicationId(this.applicationId)
+                .applicant(this.applicant)
+                .loan(this.loan)
+                .status(this.status)
+                .riskBand(this.riskBand)
+                .offer(this.offer)
+                .rejectionReasons(this.rejectionReasons);
+    }
+
+    public static class LoanApplicationBuilder {
+        private String applicationId;
+        private Applicant applicant;
+        private Loan loan;
+        private ApplicationStatus status;
+        private RiskBand riskBand;
+        private Offer offer;
+        private List<RejectionReason> rejectionReasons;
+
+        public LoanApplicationBuilder applicationId(String applicationId) {
+            this.applicationId = applicationId;
+            return this;
+        }
+
+        public LoanApplicationBuilder applicant(Applicant applicant) {
+            this.applicant = applicant;
+            return this;
+        }
+
+        public LoanApplicationBuilder loan(Loan loan) {
+            this.loan = loan;
+            return this;
+        }
+
+        public LoanApplicationBuilder status(ApplicationStatus status) {
+            this.status = status;
+            return this;
+        }
+
+        public LoanApplicationBuilder riskBand(RiskBand riskBand) {
+            this.riskBand = riskBand;
+            return this;
+        }
+
+        public LoanApplicationBuilder offer(Offer offer) {
+            this.offer = offer;
+            return this;
+        }
+
+        public LoanApplicationBuilder rejectionReasons(List<RejectionReason> rejectionReasons) {
+            this.rejectionReasons = rejectionReasons;
+            return this;
+        }
+
+        public LoanApplication build() {
+            return new LoanApplication(applicationId, applicant, loan, status, riskBand, offer, rejectionReasons);
+        }
+    }
 }
