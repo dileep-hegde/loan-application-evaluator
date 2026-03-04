@@ -1,11 +1,13 @@
 package com.dileephegde.loanapplicationevaluator.entity;
 
 import com.dileephegde.loanapplicationevaluator.entity.enums.LoanPurpose;
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
 import java.math.BigDecimal;
 
+@Embeddable
 public record Loan(
         BigDecimal amount,
         Integer tenureMonths,

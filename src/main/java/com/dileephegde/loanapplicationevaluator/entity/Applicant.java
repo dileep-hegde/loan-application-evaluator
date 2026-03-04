@@ -1,11 +1,13 @@
 package com.dileephegde.loanapplicationevaluator.entity;
 
 import com.dileephegde.loanapplicationevaluator.entity.enums.EmploymentType;
+import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 
 import java.math.BigDecimal;
 
+@Embeddable
 public record Applicant (
         String name,
         Integer age,
