@@ -25,7 +25,7 @@ public class LoanApplicationService {
     public LoanApplicationService(LoanApplicationRepository loanApplicationRepository) {
         this.loanApplicationRepository = loanApplicationRepository;
     }
-    
+
     public LoanApplicationResponse processLoanApplication(LoanApplicationRequest request) {
         ApplicantDTO applicantDTO = request.applicant();
         LoanDTO loanDTO = request.loan();
