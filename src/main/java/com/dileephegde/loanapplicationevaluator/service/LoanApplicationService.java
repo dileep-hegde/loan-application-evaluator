@@ -30,7 +30,7 @@ public class LoanApplicationService {
         return null;
     }
 
-    private BigDecimal calculateInterestRate(RiskBand riskBand, @NotNull(message = "Employment type is required") EmploymentType employmentType, @NotNull(message = "Loan amount is required") @DecimalMin(value = "10000", message = "Minimum Loan amount must be 10,000") @DecimalMax(value = "5000000", message = "Maximum Loan amount must be 5,000,000") BigDecimal loanAmount) {
+    private BigDecimal calculateInterestRate(RiskBand riskBand, EmploymentType employmentType, BigDecimal loanAmount) {
         BigDecimal baseRate = new BigDecimal("12.0");
         BigDecimal riskPremium = switch (riskBand) {
             case LOW -> BigDecimal.ZERO;
@@ -54,7 +54,7 @@ public class LoanApplicationService {
         return baseRate.add(riskPremium).add(employmentPremium).add(loanSizePremium);
     }
 
-    private RiskBand classifyRiskBand(@NotNull(message = "Credit score is required") @Min(value = 300, message = "Minimum credit score must be 300") @Max(value = 900, message = "Maximum credit score must be 900") Integer creditScore) {
+    private RiskBand classifyRiskBand(Integer creditScore) {
         if (creditScore >= 750) {
             return RiskBand.LOW;
         } else if (creditScore >= 650) {
