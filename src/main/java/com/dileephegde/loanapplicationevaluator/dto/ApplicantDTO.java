@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 
 public record ApplicantDTO (
         @NotBlank(message = "Name is required")
+        @Pattern(regexp = "^[a-zA-Z]+$", message = "Only letters are allowed for applicant name")
         String name,
 
         @NotNull(message = "Age is required")
