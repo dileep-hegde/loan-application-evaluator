@@ -25,6 +25,7 @@ public class LoanApplicationService {
     public LoanApplicationService(LoanApplicationRepository loanApplicationRepository) {
         this.loanApplicationRepository = loanApplicationRepository;
     }
+    
     public LoanApplicationResponse processLoanApplication(LoanApplicationRequest request) {
         ApplicantDTO applicantDTO = request.applicant();
         LoanDTO loanDTO = request.loan();
@@ -102,7 +103,7 @@ public class LoanApplicationService {
         return rejectionReasons;
     }
 
-    public BigDecimal calculateEmi(BigDecimal principal, BigDecimal annualInterestRate, int tenureMonths) {
+    private BigDecimal calculateEmi(BigDecimal principal, BigDecimal annualInterestRate, int tenureMonths) {
         BigDecimal monthlyRate = annualInterestRate
                 .divide(BigDecimal.valueOf(12), 10, RoundingMode.HALF_UP)
                 .divide(BigDecimal.valueOf(100), 10, RoundingMode.HALF_UP);
