@@ -153,15 +153,8 @@ public class LoanApplication {
                 '}';
     }
 
-    public LoanApplicationBuilder toBuilder() {
-        return new LoanApplicationBuilder()
-                .applicationId(this.applicationId)
-                .applicant(this.applicant)
-                .loan(this.loan)
-                .status(this.status)
-                .riskBand(this.riskBand)
-                .offer(this.offer)
-                .rejectionReasons(this.rejectionReasons);
+    public static LoanApplicationBuilder builder() {
+        return new LoanApplicationBuilder();
     }
 
     public static class LoanApplicationBuilder {
