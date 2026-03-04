@@ -178,12 +178,12 @@ public class LoanApplicationService {
 
         LoanApplicationResponse loanApplicationResponse;
         OfferDTO offerDTO = null;
-        List<RejectionReason> rejectionReason = new ArrayList<>();
+        List<RejectionReason> rejectionReason = null;
 
         if (application.getStatus() == ApplicationStatus.APPROVED) {
             offerDTO = mapToOfferDTO(application.getOffer());
         } else {
-            rejectionReason.addAll(application.getRejectionReasons());
+            rejectionReason = application.getRejectionReasons();
         }
 
         loanApplicationResponse = new LoanApplicationResponse(
