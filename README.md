@@ -90,8 +90,8 @@ The application will start on: `http://localhost:8084`
   "offer": {
     "interestRate": 13.5,
     "tenureMonths": 36,
-    "emi": 16234.23,
-    "totalPayable": 584432.28
+    "emi": 16967.64,
+    "totalPayable": 610835.04
   }
 }
 ```
