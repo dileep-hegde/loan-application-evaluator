@@ -31,7 +31,7 @@ A Spring Boot REST service for evaluating loan applications and determining loan
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/dileep-hegde/loan-application-evaluator
 cd loan-application-evaluator
 ```
 
