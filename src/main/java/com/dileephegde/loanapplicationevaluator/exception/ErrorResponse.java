@@ -7,5 +7,5 @@ public record ErrorResponse(
         LocalDateTime timestamp,
         int status,
         String error,
-        List<String> message
+        List<String> messages
 ) {}
