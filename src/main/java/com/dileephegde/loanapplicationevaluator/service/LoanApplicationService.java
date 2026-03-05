@@ -9,8 +9,7 @@ import com.dileephegde.loanapplicationevaluator.entity.enums.ApplicationStatus;
 import com.dileephegde.loanapplicationevaluator.entity.enums.EmploymentType;
 import com.dileephegde.loanapplicationevaluator.entity.enums.RejectionReason;
 import com.dileephegde.loanapplicationevaluator.entity.enums.RiskBand;
-import com.dileephegde.loanapplicationevaluator.repository.LoanApplicationRepository;
-import jakarta.validation.constraints.*;
+import com.dileephegde.loanapplicationevaluator.repository.ILoanApplicationRepository;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -20,9 +19,9 @@ import java.util.List;
 
 @Service
 public class LoanApplicationService {
-    private final LoanApplicationRepository loanApplicationRepository;
+    private final ILoanApplicationRepository loanApplicationRepository;
 
-    public LoanApplicationService(LoanApplicationRepository loanApplicationRepository) {
+    public LoanApplicationService(ILoanApplicationRepository loanApplicationRepository) {
         this.loanApplicationRepository = loanApplicationRepository;
     }
 
