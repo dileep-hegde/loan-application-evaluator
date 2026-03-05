@@ -179,7 +179,7 @@ When enabled in `application.properties`, you can access the H2 console at:
 
 Typical connection details:
 
-- JDBC URL: `jdbc:h2:mem:loandb`
+- JDBC URL: `jdbc:h2:mem:loanauditdb`
 - Username: `sa`
 - Password: (empty, unless configured otherwise)
 
