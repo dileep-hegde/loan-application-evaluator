@@ -118,8 +118,8 @@ The application will start on: `http://localhost:8084`
   "status": 400,
   "error": "Validation Failed",
   "messages": [
-    "Age must be between 21 and 60",
-    "Credit score must be between 300 and 900"
+    "Maximum age must be 60",
+    "Maximum Loan amount must be 5,000,000"
   ]
 }
 ```
