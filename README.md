@@ -175,7 +175,7 @@ The application uses an in-memory H2 database.
 
 When enabled in `application.properties`, you can access the H2 console at:
 
-- `http://localhost:8080/h2-console`
+- `http://localhost:8084/h2-console`
 
 Typical connection details:
 
